@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="AMapBackgroundGeolocation"
+        version="1.0.0">
+  <name>AMapBackgroundGeolocation</name>
+  <license>MIT license</license>
+  <description>高德地图后台定位</description>
+  <keywords>高德地图 后台定位 AMap</keywords>
+  <repo>https://github.com/yanglongji/AMapBackgroundGeolocation</repo>
+  <issue>https://github.com/yanglongji/AMapBackgroundGeolocation/issues</issue>
+  
+    <js-module src="www/AMapBackgroundGeolocation.js" name="AMapBackgroundGeolocation">
+      <runs/>
+      <clobbers target="AMapBackgroundGeolocation"/>
+    </js-module>
+  
+  
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="AMapBackgroundGeolocation">
+        <param name="android-package" value="com.tengyi.app.AMapBackgroundGeolocation"/>
+      </feature>
+    </config-file>
+    <source-file src="src/android/java/com/tengyi/app/AMapBackgroundGeolocation.java" target-dir="src/com/tengyi/app"/>
+    <source-file src="src/android/java/com/tengyi/app/IWifiAutoCloseDelegate.java" target-dir="src/com/tengyi/app"/>
+    <source-file src="src/android/java/com/tengyi/app/LocationHelperService.java" target-dir="src/com/tengyi/app"/>
+    <source-file src="src/android/java/com/tengyi/app/LocationService.java" target-dir="src/com/tengyi/app"/>
+    <source-file src="src/android/java/com/tengyi/app/LocationStatusManager.java" target-dir="src/com/tengyi/app"/>
+    <source-file src="src/android/java/com/tengyi/app/NetUtil.java" target-dir="src/com/tengyi/app"/>
+    <source-file src="src/android/java/com/tengyi/app/NotiService.java" target-dir="src/com/tengyi/app"/>
+    <source-file src="src/android/java/com/tengyi/app/PowerManagerUtil.java" target-dir="src/com/tengyi/app"/>
+    <source-file src="src/android/java/com/tengyi/app/Utils.java" target-dir="src/com/tengyi/app"/>
+    <source-file src="src/android/java/com/tengyi/app/WifiAutoCloseDelegate.java" target-dir="src/com/tengyi/app"/>
+    <source-file src="src/android/aidl/com/tengyi/app/ILocationHelperServiceAIDL.aidl" target-dir="src/com/tengyi/app"/>
+    <source-file src="src/android/aidl/com/tengyi/app/ILocationServiceAIDL.aidl" target-dir="src/com/tengyi/app"/>
+
+    <lib-file src="src/android/libs/AMap_Location_V3.8.0_20180201.jar" />
+  </platform>
+</plugin>

@@ -1,0 +1,38 @@
+{
+  "_from": "git+https://github.com/yanglongji/AMapBackgroundGeolocation.git",
+  "_id": "AMapBackgroundGeolocation@0.0.1",
+  "_inBundle": false,
+  "_integrity": "sha1-RMga2yy1kTTKVfZ8EQpURYSZ3jk=",
+  "_location": "/AMapBackgroundGeolocation",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/yanglongji/AMapBackgroundGeolocation",
+    "rawSpec": "https://github.com/yanglongji/AMapBackgroundGeolocation",
+    "saveSpec": "git+https://github.com/yanglongji/AMapBackgroundGeolocation.git",
+    "fetchSpec": "https://github.com/yanglongji/AMapBackgroundGeolocation.git",
+    "gitCommittish": "master"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/yanglongji/AMapBackgroundGeolocation.git#bcffd7f68a2656e9cc5a3473a9df67e18cebb4d8",
+  "_spec": "https://github.com/yanglongji/AMapBackgroundGeolocation",
+  "_where": "D:\\cordova\\tengyi_cordova\\node_modules",
+  "bundleDependencies": false,
+  "cordova_name": "WebView中截获ajax请求",
+  "deprecated": false,
+  "description": "WebView中截获ajax请求",
+  "issue": "https://github.com/yanglongji/AMapBackgroundGeolocation/issues",
+  "keywords": [
+    "ajax"
+  ],
+  "license": "MIT license",
+  "name": "AMapBackgroundGeolocation",
+  "platforms": [
+    "ios"
+  ],
+  "repo": "https://github.com/yanglongji/AMapBackgroundGeolocation",
+  "version": "0.0.1"
+}

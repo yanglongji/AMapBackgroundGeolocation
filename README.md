@@ -1,0 +1,4 @@
+# AMapBackgroundGeolocation
+
+AMapBackgroundGeolocation.start
+AMapBackgroundGeolocation.stop
