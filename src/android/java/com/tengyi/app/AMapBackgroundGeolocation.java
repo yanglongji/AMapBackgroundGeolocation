@@ -10,8 +10,10 @@ import com.amap.api.location.AMapLocation;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by yangl on 2018/3/23.
@@ -39,7 +41,6 @@ public class AMapBackgroundGeolocation extends CordovaPlugin {
         }
 
         this.callbackContext = callbackContext;
-        callbackContext.success();
         return true;
     }
 
@@ -78,14 +79,42 @@ public class AMapBackgroundGeolocation extends CordovaPlugin {
             String action = intent.getAction();
             if (action.equals(RECEIVER_ACTION)) {
                 AMapLocation location = intent.getParcelableExtra("result");
-                if (null == location) {
-                    callbackContext.error("定位为空");
-                }else if (location.getErrorCode() == 0) {
-                    callbackContext.success(location.toString());
-                }else {
-                    callbackContext.error(location.toString());
+                try {
+                    JSONObject obj = new JSONObject();
+                    if (null == location) {
+                        obj.put("errorInfo", "定位为空");
+                        obj.put("errorCode", 1000);
+                        sendPluginResult(obj);
+                    } else if (location.getErrorCode() == 0) {
+                        obj.put("errorCode", 0);
+                        obj.put("country", location.getCountry());
+                        obj.put("province", location.getProvince());
+                        obj.put("city", location.getCity());
+                        obj.put("district", location.getDistrict());
+                        obj.put("address", location.getAddress());
+                        obj.put("lat", location.getLatitude());
+                        obj.put("lng", location.getLongitude());
+                        sendPluginResult(obj);
+                    } else {
+                        obj.put("errorInfo", location.getLocationDetail());
+                        obj.put("errorCode", location.getErrorCode());
+                        sendPluginResult(obj);
+                    }
+                }catch(JSONException e){
+
                 }
             }
         }
     };
+
+    private void sendPluginResult(JSONObject obj){
+        try {
+            if(obj.getInt("errorCode") != 0) stopLocationService();
+            PluginResult pluginResult = new PluginResult(obj.getInt("errorCode") == 0 ? PluginResult.Status.OK : PluginResult.Status.ERROR, obj);
+            pluginResult.setKeepCallback(true);
+            this.callbackContext.sendPluginResult(pluginResult);
+        }catch(JSONException e){
+
+        }
+    }
 }

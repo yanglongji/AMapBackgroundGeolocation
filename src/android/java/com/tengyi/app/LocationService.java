@@ -81,8 +81,8 @@ public class LocationService extends NotiService {
         // 使用连续
         mLocationOption.setOnceLocation(false);
         mLocationOption.setLocationCacheEnable(false);
-        // 每10秒定位一次
-        mLocationOption.setInterval(10 * 1000);
+        // 单位微秒
+        mLocationOption.setInterval(600 * 1000);
         // 地址信息
         mLocationOption.setNeedAddress(true);
         mLocationClient.setLocationOption(mLocationOption);
