@@ -24,6 +24,15 @@
       </feature>
       <preference name="IOS_APIKEY" value="$IOS_APIKEY" />
     </config-file>
+        <config-file target="*-Info.plist" parent="NSLocationAlwaysAndWhenInUseUsageDescription">
+            <string>获得定位，推荐最近服务点</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
+            <string>获得定位，推荐最近服务点</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+            <string>获得定位，推荐最近服务点</string>
+        </config-file>
     <header-file src="src/ios/AMapBackgroundGeolocation.h"/>
     <source-file src="src/ios/AMapBackgroundGeolocation.m"/>
     <framework src="src/ios/lib/AMapLocationKit.framework" custom="true" />
