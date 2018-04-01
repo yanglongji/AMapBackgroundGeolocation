@@ -14,8 +14,20 @@
       <clobbers target="AMapBackgroundGeolocation"/>
     </js-module>
 
-  <preference name="APIKEY" />
+  <preference name="ANDROID_APIKEY" />
+  <preference name="IOS_APIKEY" />
   
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="AMapBackgroundGeolocation">
+        <param name="ios-package" value="AMapBackgroundGeolocation"/>
+      </feature>
+      <preference name="APIKEY" value="$IOS_APIKEY" />
+    </config-file>
+    <header-file src="src/ios/AMapBackgroundGeolocation.h"/>
+    <source-file src="src/ios/AMapBackgroundGeolocation.m"/>
+    <framework src="src/ios/lib/AMapLocationKit.framework" framework="true" />
+  </platform>
   <!-- android -->
   <platform name="android">
     <source-file src="src/android/java/com/tengyi/app/AMapBackgroundGeolocation.java" target-dir="src/com/tengyi/app"/>
@@ -65,7 +77,7 @@
                 <action android:name="com.tengyi.app.LocationHelperService" />
             </intent-filter>
         </service>
-        <meta-data android:name="com.amap.api.v2.apikey" android:value="$APIKEY" />
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="$ANDROID_APIKEY" />
     </config-file>
   </platform>
 </plugin>
