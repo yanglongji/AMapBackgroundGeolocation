@@ -27,6 +27,15 @@
     <header-file src="src/ios/AMapBackgroundGeolocation.h"/>
     <source-file src="src/ios/AMapBackgroundGeolocation.m"/>
     <framework src="src/ios/lib/AMapLocationKit.framework" custom="true" />
+    <framework src="src/ios/lib/AMapFoundationKit.framework" custom="true" />
+    <framework src="JavaScriptcore.framework" weak="true"/>
+    <framework src="SystemConfiguration.framework" weak="true"/>
+    <framework src="CoreTelephony.framework" weak="true"/>
+    <framework src="CoreLocation.framework" weak="true"/>
+    <framework src="Security.framework" weak="true"/>
+    <framework src="libz.tbd" weak="true"/>
+    <framework src="libc++.tbd" weak="true"/>
+    <framework src="libstdc++.6.0.9.tbd" weak="true"/>
   </platform>
   <!-- android -->
   <platform name="android">

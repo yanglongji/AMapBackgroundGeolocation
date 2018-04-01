@@ -7,6 +7,7 @@
 //
 
 #import "AMapBackgroundGeolocation.h"
+#import <AMapFoundationKit/AMapFoundationKit.h>
 #import <AMapLocationKit/AMapLocationKit.h>
 
 
@@ -39,6 +40,7 @@
 - (void)start : (CDVInvokedUrlCommand *)command
 {
     self.tempCommand = command;
+    self.locationManager.distanceFilter = 100;
     [self.locationManager startUpdatingLocation];
 }
 
