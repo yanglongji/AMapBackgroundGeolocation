@@ -22,7 +22,7 @@
       <feature name="AMapBackgroundGeolocation">
         <param name="ios-package" value="AMapBackgroundGeolocation"/>
       </feature>
-      <preference name="APIKEY" value="$IOS_APIKEY" />
+      <preference name="IOS_APIKEY" value="$IOS_APIKEY" />
     </config-file>
     <header-file src="src/ios/AMapBackgroundGeolocation.h"/>
     <source-file src="src/ios/AMapBackgroundGeolocation.m"/>

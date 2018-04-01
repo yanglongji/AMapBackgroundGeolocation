@@ -22,7 +22,9 @@
 -(void)pluginInitialize
 {
     // self.apikey = [[self.commandDelegate settings] objectForKey:@"APIKEY"];
-    [AMapServices sharedServices].apiKey = (NSString *)[[self.commandDelegate settings] objectForKey:@"APIKEY"];
+    [AMapServices sharedServices].apiKey = (NSString *)[[self.commandDelegate settings] objectForKey:@"IOS_APIKEY"];
+    
+    NSLog(@"%@", [[self.commandDelegate settings] objectForKey:@"IOS_APIKEY"]);
     self.locationManager = [[AMapLocationManager alloc] init];
     
     [self.locationManager setDelegate:self];
