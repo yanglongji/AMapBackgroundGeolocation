@@ -55,4 +55,17 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:self.tempCommand.callbackId];
 }
 
+#pragma mark - AMapLocationManager Delegate
+
+- (void)amapLocationManager:(AMapLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"%s, amapLocationManager = %@, error = %@", __func__, [manager class], error);
+}
+
+- (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location reGeocode:(AMapLocationReGeocode *)reGeocode
+{
+    NSLog(@"location:{lat:%f; lon:%f; accuracy:%f}", location.coordinate.latitude, location.coordinate.longitude, location.horizontalAccuracy);
+
+}
+
 @end

@@ -26,7 +26,7 @@
     </config-file>
     <header-file src="src/ios/AMapBackgroundGeolocation.h"/>
     <source-file src="src/ios/AMapBackgroundGeolocation.m"/>
-    <framework src="src/ios/lib/AMapLocationKit.framework" framework="true" />
+    <framework src="src/ios/lib/AMapLocationKit.framework" custom="true" />
   </platform>
   <!-- android -->
   <platform name="android">
