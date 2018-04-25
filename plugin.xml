@@ -24,12 +24,12 @@
       </feature>
       <preference name="IOS_APIKEY" value="$IOS_APIKEY" />
     </config-file>
-        <config-file target="*-Info.plist" parent="NSLocationAlwaysAndWhenInUseUsageDescription">
+        <!-- <config-file target="*-Info.plist" parent="NSLocationAlwaysAndWhenInUseUsageDescription">
             <string>获得定位，推荐最近服务点</string>
         </config-file>
         <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
             <string>获得定位，推荐最近服务点</string>
-        </config-file>
+        </config-file> -->
         <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
             <string>获得定位，推荐最近服务点</string>
         </config-file>
