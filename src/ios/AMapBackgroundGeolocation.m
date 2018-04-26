@@ -36,8 +36,6 @@
     
     //开启带逆地理连续定位
     [self.locationManager setLocatingWithReGeocode:YES];
-    
-//    timestamp =
 }
 
 - (void)start : (CDVInvokedUrlCommand *)command
@@ -73,7 +71,7 @@
 - (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location reGeocode:(AMapLocationReGeocode *)reGeocode
 {
     // reGeocode  =  AMapLocationReGeocode:{formattedAddress:浙江省杭州市西湖区金蓬街758舞蹈艺术中心(金地自在城教学点); country:中国;province:浙江省; city:杭州市; district:西湖区; citycode:0571; adcode:330106; street:金蓬街; number:293号; POIName:758舞蹈艺术中心(金地自在城教学点); AOIName:(null);}
-    if([self timestamp] == nil || [[self timestamp] timeIntervalSince1970] - [location.timestamp timeIntervalSince1970] > 600){ //10分钟回调1次
+    if([self timestamp] == nil || [location.timestamp timeIntervalSince1970] - [[self timestamp] timeIntervalSince1970] > 600){ //10分钟回调1次
         self.timestamp = location.timestamp;
         NSDictionary *dic = @{@"lng":[NSString stringWithFormat:@"%f",location.coordinate.longitude],@"lat":[NSString stringWithFormat:@"%f",location.coordinate.latitude],@"address":reGeocode.formattedAddress == nil ? @"" : [NSString stringWithFormat:@"%@",reGeocode.formattedAddress]};
 //        NSLog(@"%@", dic);
