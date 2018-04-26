@@ -56,7 +56,7 @@
 
 - (void)sendResp:(NSDictionary *)resultDic status:(CDVCommandStatus)status{
     CDVPluginResult* pluginResult = nil;
-    pluginResult = [CDVPluginResult resultWithStatus:status];
+    pluginResult = [CDVPluginResult resultWithStatus:status messageAsDictionary:resultDic];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:self.tempCommand.callbackId];
 }
 
